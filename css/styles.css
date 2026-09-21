@@ -822,15 +822,29 @@ button, input, select, textarea {
 }
 
 .procedure-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background-color: rgba(216, 202, 187, 0.15);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--wine-primary), var(--wine-dark));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--wine-primary);
+  color: var(--cream-surface);
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(90, 30, 38, 0.22);
+  transition: var(--transition-normal);
+}
+
+.procedure-icon-wrap svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.procedure-card:hover .procedure-icon-wrap {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(90, 30, 38, 0.32);
 }
 
 .procedure-title {
