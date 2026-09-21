@@ -1,34 +1,78 @@
 /**
- * AMAN CLÍNICA ODONTOLÓGICA - JAVASCRIPT PRINCIPAL
- * Interações, máscara de telefone, navegação e integração com WhatsApp
+ * AMAN CLÍNICA ODONTOLÓGICA - JAVASCRIPT MOBILE-FIRST
+ * Menu Drawer, Filtro de Procedimentos por Categoria, Máscara e Integração WhatsApp
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const CLINIC_WHATSAPP = '5551999208117'; // (51) 99920-8117
   
   // -------------------------------------------------------------
-  // 1. Menu Mobile
+  // 1. Menu Drawer Mobile & Backdrop
   // -------------------------------------------------------------
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  const navBackdrop = document.getElementById('navBackdrop');
   const navLinks = document.getElementById('navLinks');
 
-  if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+  function openDrawer() {
+    if (navLinks && navBackdrop) {
+      navLinks.classList.add('open');
+      navBackdrop.classList.add('open');
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // Impede rolagem do fundo
+    }
+  }
 
-    // Fechar menu ao clicar em qualquer link
-    navLinks.querySelectorAll('a').forEach(link => {
+  function closeDrawer() {
+    if (navLinks && navBackdrop) {
+      navLinks.classList.remove('open');
+      navBackdrop.classList.remove('open');
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+  if (navBackdrop) navBackdrop.addEventListener('click', closeDrawer);
+
+  // Fecha menu ao clicar em qualquer link da navegação
+  if (navLinks) {
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        closeDrawer();
       });
     });
   }
 
   // -------------------------------------------------------------
-  // 2. Máscara de Telefone Brasileira (XX) XXXXX-XXXX
+  // 2. Filtro de Procedimentos por Chips (Mobile-Friendly)
+  // -------------------------------------------------------------
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const procedureCards = document.querySelectorAll('.procedure-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-filter');
+
+      // Atualiza botão ativo
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filtra cards
+      procedureCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        if (category === 'all' || cardCategory.includes(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // -------------------------------------------------------------
+  // 3. Máscara de Telefone Brasileira (XX) XXXXX-XXXX
   // -------------------------------------------------------------
   const phoneInput = document.getElementById('phone');
   if (phoneInput) {
@@ -37,13 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (value.length > 11) value = value.slice(0, 11);
 
       if (value.length > 10) {
-        // Formato celular (11 dígitos): (XX) XXXXX-XXXX
         value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
       } else if (value.length > 5) {
-        // Formato intermediário: (XX) XXXX-XXXX
         value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
       } else if (value.length > 2) {
-        // Formato DDD: (XX) XXX...
         value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
       } else if (value.length > 0) {
         value = value.replace(/^(\d*)$/, '($1');
@@ -53,24 +94,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 3. Seleção Rápida de Procedimento nos Cards
+  // 4. Ações Rápidas nos Cards de Procedimento
   // -------------------------------------------------------------
-  const procedureButtons = document.querySelectorAll('[data-procedure]');
+  const procedureActionBtns = document.querySelectorAll('[data-procedure]');
   const procedureSelect = document.getElementById('procedure');
   const bookingSection = document.getElementById('agendamento');
   const nameInput = document.getElementById('fullName');
 
-  procedureButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  procedureActionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       const procedureName = btn.getAttribute('data-procedure');
       const action = btn.getAttribute('data-action');
 
       if (action === 'whatsapp-direct') {
-        // Direto no WhatsApp
         const text = `Olá! Gostaria de agendar uma consulta sobre *${procedureName}* na Aman Clínica Odontológica.`;
         window.open(`https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
       } else {
-        // Preenche no formulário e rola até ele
         if (procedureSelect) {
           procedureSelect.value = procedureName;
         }
@@ -78,14 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
           bookingSection.scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
             if (nameInput) nameInput.focus();
-          }, 600);
+          }, 500);
         }
       }
     });
   });
 
   // -------------------------------------------------------------
-  // 4. Envio do Formulário de Interesse
+  // 5. Envio do Formulário de Interesse
   // -------------------------------------------------------------
   const bookingForm = document.getElementById('bookingForm');
   const modalSuccess = document.getElementById('modalSuccess');
@@ -104,11 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const notes = document.getElementById('notes')?.value.trim() || '';
 
       if (!name || !phone) {
-        alert('Por favor, preencha seu nome e telefone.');
+        alert('Por favor, informe seu nome e telefone.');
         return;
       }
 
-      // Montar mensagem amigável para o WhatsApp da clínica
       let message = `*Novo Agendamento - Aman Clínica Odontológica*\n\n`;
       message += `👤 *Nome:* ${name}\n`;
       message += `📱 *Telefone:* ${phone}\n`;
@@ -121,25 +159,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const whatsappUrl = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent(message)}`;
 
-      // Atualiza link de backup no modal
       if (modalWhatsappLink) {
         modalWhatsappLink.href = whatsappUrl;
       }
 
-      // Abre WhatsApp
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
-      // Exibe modal de confirmação
       if (modalSuccess) {
         modalSuccess.classList.add('active');
       }
 
-      // Limpa formulário
       bookingForm.reset();
     });
   }
 
-  // Fechar Modal
   function closeModal() {
     if (modalSuccess) {
       modalSuccess.classList.remove('active');
@@ -153,17 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === modalSuccess) closeModal();
     });
   }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalSuccess && modalSuccess.classList.contains('active')) {
+    if (e.key === 'Escape') {
+      closeDrawer();
       closeModal();
     }
   });
 
   // -------------------------------------------------------------
-  // 5. Destacar Link Ativo no Menu Durante a Rolagem
+  // 6. Destaque de Link Ativo no Scroll
   // -------------------------------------------------------------
   const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+  const navItemLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
   function highlightNavOnScroll() {
     const scrollY = window.pageYOffset;
@@ -174,11 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionId = current.getAttribute('id');
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navItems.forEach(item => {
-          if (item.getAttribute('href') === `#${sectionId}`) {
-            item.classList.add('active');
+        navItemLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
           } else {
-            item.classList.remove('active');
+            link.classList.remove('active');
           }
         });
       }
