@@ -10,30 +10,30 @@
 
 :root {
   /* Cores Oficiais da Marca */
-  --vanilla-silk: #F3EADB;     /* Cor predominante mais clara */
-  --alpine-oat: #D8CABB;       /* Neutro suave / Bordas / Linhas */
+  --vanilla-silk: #F3EADB;     /* Vanilla Silk oficial da paleta */
+  --alpine-oat: #D8CABB;       /* Alpine Oat (Neutro suave / Bordas sutis) */
   --warm-greige: #B39F92;      /* Greige quente nobre */
-  --cherry-velvet: #5A1E26;    /* Vermelho meio vinho, meio bordô */
-  --bordeaux-noir: #34151C;    /* Bordô profundo para contraste e leitura */
+  --cherry-velvet: #5A1E26;    /* Vermelho meio vinho, meio bordô - destaque da marca */
+  --bordeaux-noir: #34151C;    /* Bordô profundo / Contrastes / Tipografia nobre */
 
-  /* Mapeamento Semântico */
+  /* Mapeamento Semântico e Fundo Claro e Límpido */
   --wine-dark: #34151C;        /* Bordeaux Noir */
   --wine-primary: #5A1E26;     /* Cherry Velvet */
   --gold-champagne: #B39F92;   /* Warm Greige */
   --gold-light: #D8CABB;       /* Alpine Oat */
   --gold-accent: #5A1E26;      /* Cherry Velvet */
   --sand-nude: #D8CABB;        /* Alpine Oat */
-  --sand-light: #E6DCce;       /* Variação suave Vanilla/Alpine */
-  --cream-linen: #F3EADB;      /* Vanilla Silk */
-  --cream-light: #F3EADB;      /* Predominante clara: Vanilla Silk */
-  --cream-surface: #EAE0CF;    /* Superfície Vanilla Silk levemente contrastada */
+  --sand-light: #EFE8DE;       /* Variação suave Vanilla/Alpine */
+  --cream-linen: #FBF8F3;      /* Creme Linho luminoso */
+  --cream-light: #FBF8F3;      /* Cor predominante clara oficial de fundo */
+  --cream-surface: #F5EFE6;    /* Superfície suavemente contrastada para seções/cards */
   --white: #FFFFFF;
   
   /* Estados e Textos */
   --text-dark: #34151C;        /* Bordeaux Noir */
   --text-body: #493337;        /* Vinho escuro neutro e legível, sem marrom */
   --text-muted: #7A6568;       /* Greige-bordô suave */
-  --text-light: #F3EADB;       /* Vanilla Silk */
+  --text-light: #FBF8F3;       /* Creme Linho claro */
   --whatsapp-green: #25D366;
   --whatsapp-hover: #1EBE5D;
   --error: #BA1A1A;
@@ -472,7 +472,7 @@ button, input, select, textarea {
    ========================================================================= */
 .hero {
   padding: 1.75rem 0 2.75rem;
-  background: radial-gradient(circle at 50% 10%, rgba(216, 202, 187, 0.4) 0%, rgba(243, 234, 219, 0.98) 80%);
+  background: linear-gradient(180deg, #FBF8F3 0%, rgba(245, 239, 230, 0.5) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1076,7 +1076,7 @@ button, input, select, textarea {
    FORMULÁRIO DE INTERESSE MOBILE-FIRST
    ========================================================================== */
 .booking-section {
-  background: radial-gradient(circle at 50% 50%, rgba(243, 234, 219, 0.6) 0%, rgba(251, 248, 243, 0.95) 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(243, 234, 219, 0.35) 0%, #FBF8F3 100%);
 }
 
 .booking-wrapper {
@@ -1710,6 +1710,47 @@ button, input, select, textarea {
     color: var(--sand-nude);
   }
 
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .brand-logo-link {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  /* Navegação em Linha no Desktop */
+  .nav-links {
+    order: 2;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .nav-item-drawer-only {
+    display: none;
+  }
+
+  .header-cta-group {
+    order: 3;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
   .mobile-menu-btn,
   .drawer-header,
   .nav-backdrop,
@@ -1719,19 +1760,9 @@ button, input, select, textarea {
 
   .header-cta-group .btn-header-desktop {
     display: inline-flex;
-  }
-
-  /* Navegação em Linha no Desktop */
-  .nav-links {
-    position: static;
-    transform: none;
-    box-shadow: none;
-    width: auto;
-    background: transparent;
-    padding: 0;
-    flex-direction: row;
-    gap: 1.75rem;
-    overflow: visible;
+    white-space: nowrap;
+    padding: 0.65rem 1.35rem;
+    font-size: 0.92rem;
   }
 
   .nav-item {
