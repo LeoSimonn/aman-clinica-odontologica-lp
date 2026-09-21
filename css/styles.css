@@ -884,6 +884,153 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
+   DEPOIMENTOS DOS PACIENTES (PROVA SOCIAL)
+   ========================================================================== */
+.testimonials-section {
+  position: relative;
+  background-color: var(--cream-light);
+}
+
+.testimonials-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: 1px solid var(--sand-light);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--wine-dark);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.15rem;
+}
+
+.stars-gold {
+  color: #F5A623;
+  display: inline-flex;
+  gap: 2px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  border: 1px solid rgba(176, 154, 135, 0.28);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '“';
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(176, 154, 135, 0.18);
+  pointer-events: none;
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.testimonial-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--whatsapp-hover);
+  background: rgba(37, 211, 102, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  font-style: italic;
+  margin-bottom: 1.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-top: 1px dashed var(--sand-light);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.testimonial-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-champagne);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.testimonial-author-info strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--wine-dark);
+  font-weight: 700;
+}
+
+.testimonial-author-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.testimonials-cta-box {
+  margin-top: 2.5rem;
+  background: linear-gradient(135deg, rgba(77, 29, 32, 0.06), rgba(176, 154, 135, 0.15));
+  border: 1px dashed rgba(176, 154, 135, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonials-cta-box h3 {
+  font-size: 1.3rem;
+  color: var(--wine-dark);
+}
+
+.testimonials-cta-box p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  max-width: 540px;
+}
+
+/* ==========================================================================
    FORMULÁRIO DE INTERESSE MOBILE-FIRST
    ========================================================================== */
 .booking-section {
@@ -1330,6 +1477,12 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1567,6 +1720,18 @@ button, input, select, textarea {
 
   .differentials-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold-champagne);
   }
 
   .booking-wrapper {
