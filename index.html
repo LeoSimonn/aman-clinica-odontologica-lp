@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Estilos Customizados Mobile-First -->
-  <link rel="stylesheet" href="css/styles.css?v=3.0">
+  <link rel="stylesheet" href="css/styles.css?v=3.2">
 
   <!-- Schema.org Dados Estruturados (LocalBusiness / Dentist) -->
   <script type="application/ld+json">
@@ -118,9 +118,12 @@
   <!-- =========================================================================
        CABEÇALHO MOBILE-FIRST & DRAWER DE NAVEGAÇÃO (FLOATING PILL NAVBAR)
        ========================================================================= -->
-  <header class="header floating-header">
-    <div class="container header-container">
-      <nav class="header-nav floating-pill" aria-label="Navegação Principal">
+  <!-- =========================================================================
+       CABEÇALHO MOBILE-FIRST & DRAWER DE NAVEGAÇÃO
+       ========================================================================= -->
+  <header class="header">
+    <div class="container">
+      <nav class="header-nav" aria-label="Navegação Principal">
         <a href="#inicio" class="brand-logo-link" aria-label="Aman Clínica Odontológica">
           <img src="assets/icons/logo-completa.svg" alt="Logomarca Aman Clínica Odontológica" class="brand-logo-img">
         </a>
@@ -189,9 +192,8 @@
 
         <!-- Botões de Ação no Topo (Mobile e Desktop) -->
         <div class="header-cta-group">
-          <a href="#depoimentos" class="pill-badge-btn" aria-label="Avaliações dos pacientes">
-            <span class="star-icon">★</span>
-            <span class="pill-badge-text">4.9 no Google</span>
+          <a href="tel:+5551999208117" class="btn-header-call" aria-label="Ligar para a clínica">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </a>
 
           <a href="https://wa.me/5551999208117?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Aman%20Cl%C3%ADnica%20Odontol%C3%B3gica." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-header-desktop">
@@ -211,117 +213,91 @@
   </header>
 
   <!-- =========================================================================
-       HERO SECTION DARK LUXURY (ESTILO INSPIRADO EM LUCAS CAREY COM BRANDING AMAN)
+       HERO SECTION (ESTÉTICA ODONTOLÓGICA LIMPA & FOTO LATERAL NO WEB)
        ========================================================================= -->
-  <section class="hero hero-dark-luxury" id="inicio">
-    <!-- Partículas Flutuantes Sutis de Fundo -->
-    <div class="hero-sparkles" aria-hidden="true">
-      <span class="sparkle s1"></span>
-      <span class="sparkle s2"></span>
-      <span class="sparkle s3"></span>
-      <span class="sparkle s4"></span>
-      <span class="sparkle s5"></span>
-      <span class="sparkle s6"></span>
-      <span class="sparkle s7"></span>
-      <span class="sparkle s8"></span>
-    </div>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="tagline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Excelência & Cuidado em Canoas
+          </div>
+          
+          <h1 class="hero-title">
+            O sorriso dos seus sonhos com o <span>cuidado que você merece</span>.
+          </h1>
+          
+          <p class="hero-lead">
+            Atendimento acolhedor, tecnologia moderna e tratamentos completos com a <strong>Dra. Larissa Ottoni</strong> e o <strong>Dr. Carlos Eduardo</strong>.
+          </p>
 
-    <!-- Brilho de Fundo Ambient Glow -->
-    <div class="hero-ambient-glow" aria-hidden="true"></div>
+          <!-- Chamada para Ação Touch Mobile -->
+          <div class="hero-cta-group">
+            <a href="https://wa.me/5551999208117?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aman%20Cl%C3%ADnica%20Odontol%C3%B3gica%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp hero-primary-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.533-1.637-.682-2.709-2.348-2.791-2.457-.082-.109-.664-.884-.664-1.685 0-.801.42-1.196.57-1.359.15-.164.327-.205.436-.205.109 0 .218.002.313.007.101.005.236-.038.369.281.137.327.469 1.144.51 1.226.041.082.068.178.014.287-.055.109-.082.178-.164.273-.082.095-.173.212-.247.285-.082.082-.168.171-.073.334.095.163.424.7 1.026 1.236.775.69 1.428.905 1.631.999.204.095.324.082.446-.055.123-.136.526-.613.667-.822.14-.209.28-.175.47-.104.19.071 1.206.568 1.413.671.207.103.344.155.395.242.052.087.052.505-.092.91z"/></svg>
+              Agendar Consulta no WhatsApp
+            </a>
+            <a href="#procedimentos" class="hero-secondary-link">
+              <span>Conheça nossos procedimentos</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+          </div>
 
-    <div class="container hero-container">
-      <div class="hero-header-content">
-        <!-- Tag de Autoridade / Instagram -->
-        <div class="hero-social-tag">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <span>@aman.odontologia</span>
-          <span class="tag-divider">&bull;</span>
-          <span class="tag-location">Canoas - RS</span>
-        </div>
-
-        <h1 class="hero-main-title">
-          Quer transformar o <span class="highlight-gold-italic">seu sorriso</span> e sua autoestima?
-        </h1>
-
-        <p class="hero-subheadline">
-          Atendimento acolhedor, tecnologia moderna e tratamentos completos com a <strong>Dra. Larissa Ottoni</strong> e o <strong>Dr. Carlos Eduardo Teixeira</strong>.
-        </p>
-      </div>
-
-      <!-- Centro Visual: Foto Recortada com Glow e Badges Flutuantes -->
-      <div class="hero-stage">
-        <!-- Halo / Aura de Luz Dourada e Bordô -->
-        <div class="hero-aura-glow" aria-hidden="true"></div>
-
-        <!-- Badges Flutuantes de Especialidades -->
-        <div class="floating-badge badge-left">
-          <div class="badge-accent-bar"></div>
-          <div class="badge-content">
-            <span class="badge-title">Reabilitação & Implantes</span>
-            <span class="badge-desc">Dentes fixos e mastigação segura</span>
+          <!-- Trust Bar em Chips Móveis -->
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <span class="trust-number">★ 4.9</span>
+              <span class="trust-label">81 avaliações no Google</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">Completo</span>
+              <span class="trust-label">Clínica & Estética</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">Canoas</span>
+              <span class="trust-label">Bairro Niterói</span>
+            </div>
           </div>
         </div>
 
-        <div class="floating-badge badge-right">
-          <div class="badge-accent-bar"></div>
-          <div class="badge-content">
-            <span class="badge-title">Estética & Harmonização</span>
-            <span class="badge-desc">Sorriso natural e rejuvenescimento</span>
-          </div>
-        </div>
+        <!-- Coluna Visual da Lateral no Web com Recorte e Badges Flutuantes Claros -->
+        <div class="hero-image-wrapper">
+          <div class="hero-stage-clean">
+            <!-- Halo Suave de Iluminação Clínica -->
+            <div class="hero-clean-aura" aria-hidden="true"></div>
 
-        <!-- Recorte dos Dentistas -->
-        <div class="hero-cutout-frame">
-          <picture>
-            <source srcset="assets/images/casal-dentistas-cutout.webp" type="image/webp">
-            <img 
-              src="assets/images/casal-dentistas-cutout.png" 
-              alt="Dra. Larissa Ottoni e Dr. Carlos Eduardo Teixeira - Fundadores da Aman Clínica Odontológica em Canoas" 
-              class="hero-cutout-img"
-              fetchpriority="high"
-              width="900"
-              height="1125"
-            >
-          </picture>
-          <!-- Linha de Horizonte Luminosa na Base -->
-          <div class="hero-cutout-horizon" aria-hidden="true"></div>
-        </div>
-      </div>
+            <!-- Badges Flutuantes Estilo Limpo Odontológico -->
+            <div class="floating-badge-clean badge-right">
+              <div class="badge-accent-bar"></div>
+              <div class="badge-content">
+                <span class="badge-title">Reabilitação & Implantes</span>
+                <span class="badge-desc">Dr. Carlos Eduardo &bull; CRORS 30471</span>
+              </div>
+            </div>
 
-      <!-- Prova Social e Conversão Principal -->
-      <div class="hero-action-bottom">
-        <!-- Avaliação Google 5 Estrelas -->
-        <div class="hero-reviews-bar">
-          <div class="star-rating" aria-label="Avaliação 5 estrelas">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <span class="rating-value">4.9</span>
-          <span class="rating-divider">&bull;</span>
-          <span class="rating-source">Google Reviews (81 avaliações)</span>
-        </div>
+            <div class="floating-badge-clean badge-left">
+              <div class="badge-accent-bar"></div>
+              <div class="badge-content">
+                <span class="badge-title">Estética & Harmonização</span>
+                <span class="badge-desc">Dra. Larissa Ottoni &bull; CRORS 30269</span>
+              </div>
+            </div>
 
-        <!-- CTA Principal Dourado com Glow -->
-        <div class="hero-cta-wrapper">
-          <a href="https://wa.me/5551999208117?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aman%20Cl%C3%ADnica%20Odontol%C3%B3gica%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-gold-cta hero-btn-main">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.533-1.637-.682-2.709-2.348-2.791-2.457-.082-.109-.664-.884-.664-1.685 0-.801.42-1.196.57-1.359.15-.164.327-.205.436-.205.109 0 .218.002.313.007.101.005.236-.038.369.281.137.327.469 1.144.51 1.226.041.082.068.178.014.287-.055.109-.082.178-.164.273-.082.095-.173.212-.247.285-.082.082-.168.171-.073.334.095.163.424.7 1.026 1.236.775.69 1.428.905 1.631.999.204.095.324.082.446-.055.123-.136.526-.613.667-.822.14-.209.28-.175.47-.104.19.071 1.206.568 1.413.671.207.103.344.155.395.242.052.087.052.505-.092.91z"/></svg>
-            <span>Quero agendar uma consulta</span>
-          </a>
-
-          <a href="#procedimentos" class="hero-link-subtle">
-            <span>Conheça os procedimentos e tratamentos</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-        </div>
-
-        <!-- Chips de Confiança e Credenciais -->
-        <div class="hero-trust-chips">
-          <div class="trust-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>EPAO 6440 &bull; CRORS 30269 / 30471</span>
-          </div>
-          <div class="trust-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Atendimento Pelos Próprios Fundadores</span>
+            <!-- Frame da Foto Recortada com Fundo Arquitetural Claro -->
+            <div class="hero-clean-cutout-frame">
+              <picture>
+                <source srcset="assets/images/casal-dentistas-cutout.webp" type="image/webp">
+                <img 
+                  src="assets/images/casal-dentistas-cutout.png" 
+                  alt="Dra. Larissa Ottoni e Dr. Carlos Eduardo Teixeira - Fundadores da Aman Clínica Odontológica em Canoas" 
+                  class="hero-clean-cutout-img"
+                  fetchpriority="high"
+                  width="900"
+                  height="1125"
+                >
+              </picture>
+            </div>
           </div>
         </div>
       </div>
@@ -1221,6 +1197,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=2.5"></script>
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>
