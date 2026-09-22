@@ -221,4 +221,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
+
+  // -------------------------------------------------------------
+  // 7. Efeito de Scroll no Floating Pill Header
+  // -------------------------------------------------------------
+  const floatingPill = document.querySelector('.floating-pill');
+  if (floatingPill) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) {
+        floatingPill.classList.add('scrolled');
+      } else {
+        floatingPill.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 });
