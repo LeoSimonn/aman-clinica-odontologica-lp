@@ -583,8 +583,9 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0.75rem 0.95rem;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(216, 202, 187, 0.5);
   border-radius: var(--radius-sm);
@@ -598,38 +599,42 @@ button, input, select, textarea {
   box-shadow: 0 4px 14px rgba(52, 21, 28, 0.08);
 }
 
-.proof-card-header {
+.proof-main {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 0.3rem;
   margin-bottom: 0.2rem;
+  min-height: 26px;
 }
 
 .proof-star {
   color: #D4AF37;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1;
 }
 
-.proof-icon-sparkle {
+.proof-number {
+  font-family: var(--font-serif);
   color: var(--cherry-velvet);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   line-height: 1;
 }
 
 .proof-title {
   color: var(--wine-dark);
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   line-height: 1.2;
 }
 
-.proof-desc {
+.proof-label {
   color: var(--text-muted);
   font-size: 0.75rem;
   line-height: 1.2;
+  display: block;
 }
 
 /* ==========================================================================
@@ -2069,15 +2074,19 @@ button, input, select, textarea {
   }
 
   .proof-card {
-    padding: 0.85rem 1.15rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .proof-number {
+    font-size: 1.35rem;
   }
 
   .proof-title {
-    font-size: 0.92rem;
+    font-size: 1rem;
   }
 
-  .proof-desc {
-    font-size: 0.78rem;
+  .proof-label {
+    font-size: 0.8rem;
   }
 
   .hero-image-wrapper {
