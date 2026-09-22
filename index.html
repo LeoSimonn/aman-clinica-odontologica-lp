@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Estilos Customizados Mobile-First -->
-  <link rel="stylesheet" href="css/styles.css?v=3.2">
+  <link rel="stylesheet" href="css/styles.css?v=3.5">
 
   <!-- Schema.org Dados Estruturados (LocalBusiness / Dentist) -->
   <script type="application/ld+json">
@@ -213,7 +213,7 @@
   </header>
 
   <!-- =========================================================================
-       HERO SECTION (ESTÉTICA ODONTOLÓGICA LIMPA & FOTO LATERAL NO WEB)
+       HERO SECTION (ESTÉTICA ODONTOLÓGICA PREMIUM: RECORTE LIMPO & CONVERSÃO)
        ========================================================================= -->
   <section class="hero" id="inicio">
     <div class="container">
@@ -229,10 +229,10 @@
           </h1>
           
           <p class="hero-lead">
-            Atendimento acolhedor, tecnologia moderna e tratamentos completos com a <strong>Dra. Larissa Ottoni</strong> e o <strong>Dr. Carlos Eduardo</strong>.
+            Atendimento humanizado, tecnologia moderna e tratamentos completos com a <strong>Dra. Larissa Ottoni</strong> e o <strong>Dr. Carlos Eduardo</strong>.
           </p>
 
-          <!-- Chamada para Ação Touch Mobile -->
+          <!-- Chamada para Ação Touch Mobile & Desktop -->
           <div class="hero-cta-group">
             <a href="https://wa.me/5551999208117?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Aman%20Cl%C3%ADnica%20Odontol%C3%B3gica%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp hero-primary-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.533-1.637-.682-2.709-2.348-2.791-2.457-.082-.109-.664-.884-.664-1.685 0-.801.42-1.196.57-1.359.15-.164.327-.205.436-.205.109 0 .218.002.313.007.101.005.236-.038.369.281.137.327.469 1.144.51 1.226.041.082.068.178.014.287-.055.109-.082.178-.164.273-.082.095-.173.212-.247.285-.082.082-.168.171-.073.334.095.163.424.7 1.026 1.236.775.69 1.428.905 1.631.999.204.095.324.082.446-.055.123-.136.526-.613.667-.822.14-.209.28-.175.47-.104.19.071 1.206.568 1.413.671.207.103.344.155.395.242.052.087.052.505-.092.91z"/></svg>
@@ -244,59 +244,73 @@
             </a>
           </div>
 
-          <!-- Trust Bar em Chips Móveis -->
-          <div class="hero-trust-bar">
-            <div class="trust-item">
-              <span class="trust-number">★ 4.9</span>
-              <span class="trust-label">81 avaliações no Google</span>
+          <!-- Régua de Credibilidade & Avaliação Google Unificada -->
+          <div class="hero-proof-strip">
+            <div class="proof-pill">
+              <span class="proof-star">★ 4.9</span>
+              <span class="proof-text">Google Reviews (81 avaliações)</span>
             </div>
-            <div class="trust-item">
-              <span class="trust-number">Completo</span>
-              <span class="trust-label">Clínica & Estética</span>
-            </div>
-            <div class="trust-item">
-              <span class="trust-number">Canoas</span>
-              <span class="trust-label">Bairro Niterói</span>
+            <div class="proof-pill">
+              <span class="proof-badge-text">Clínica & Estética</span>
+              <span class="proof-text">Bairro Niterói, Canoas</span>
             </div>
           </div>
         </div>
 
-        <!-- Coluna Visual da Lateral no Web com Recorte e Badges Flutuantes Claros -->
+        <!-- Coluna Visual dos Dentistas (Sem caixa branca, com luz de estúdio e badges no lugar certo) -->
         <div class="hero-image-wrapper">
-          <div class="hero-stage-clean">
-            <!-- Halo Suave de Iluminação Clínica -->
-            <div class="hero-clean-aura" aria-hidden="true"></div>
+          <div class="hero-visual-stage">
+            <!-- Aura Suave de Luz Quente de Estúdio (Sem caixas ou bordas) -->
+            <div class="hero-studio-glow" aria-hidden="true"></div>
 
-            <!-- Badges Flutuantes Estilo Limpo Odontológico -->
-            <div class="floating-badge-clean badge-right">
+            <!-- Foto Recortada Livre, com fade sutil na base -->
+            <picture class="hero-dentists-picture">
+              <source srcset="assets/images/casal-dentistas-cutout.webp" type="image/webp">
+              <img 
+                src="assets/images/casal-dentistas-cutout.png" 
+                alt="Dra. Larissa Ottoni e Dr. Carlos Eduardo Teixeira - Fundadores da Aman Clínica Odontológica em Canoas" 
+                class="hero-dentists-img"
+                fetchpriority="high"
+                width="900"
+                height="1125"
+              >
+            </picture>
+
+            <!-- Badges Desktop: Estrategicamente posicionados FORA dos rostos -->
+            <!-- Carlos fica à direita (cabeça no topo). O badge do Carlos fica na altura do quadril/cintura, longe do rosto -->
+            <div class="floating-badge badge-carlos">
               <div class="badge-accent-bar"></div>
               <div class="badge-content">
-                <span class="badge-title">Reabilitação & Implantes</span>
-                <span class="badge-desc">Dr. Carlos Eduardo &bull; CRORS 30471</span>
+                <span class="badge-title">Dr. Carlos Eduardo</span>
+                <span class="badge-desc">Reabilitação & Implantes &bull; CRORS 30471</span>
               </div>
             </div>
 
-            <div class="floating-badge-clean badge-left">
+            <!-- Larissa fica à esquerda (cabeça no meio-esquerda). O badge fica na lateral esquerda, na altura dos braços -->
+            <div class="floating-badge badge-larissa">
               <div class="badge-accent-bar"></div>
               <div class="badge-content">
-                <span class="badge-title">Estética & Harmonização</span>
-                <span class="badge-desc">Dra. Larissa Ottoni &bull; CRORS 30269</span>
+                <span class="badge-title">Dra. Larissa Ottoni</span>
+                <span class="badge-desc">Estética & Harmonização &bull; CRORS 30269</span>
               </div>
             </div>
+          </div>
 
-            <!-- Frame da Foto Recortada com Fundo Arquitetural Claro -->
-            <div class="hero-clean-cutout-frame">
-              <picture>
-                <source srcset="assets/images/casal-dentistas-cutout.webp" type="image/webp">
-                <img 
-                  src="assets/images/casal-dentistas-cutout.png" 
-                  alt="Dra. Larissa Ottoni e Dr. Carlos Eduardo Teixeira - Fundadores da Aman Clínica Odontológica em Canoas" 
-                  class="hero-clean-cutout-img"
-                  fetchpriority="high"
-                  width="900"
-                  height="1125"
-                >
-              </picture>
+          <!-- Cards dos Dentistas no Mobile: Exibidos ABAIXO da foto (NUNCA na frente do rosto) -->
+          <div class="hero-mobile-dentists-cards">
+            <div class="mobile-dentist-chip">
+              <div class="chip-accent-dot"></div>
+              <div class="chip-info">
+                <strong>Dra. Larissa Ottoni</strong>
+                <span>Estética & Harmonização &bull; CRORS 30269</span>
+              </div>
+            </div>
+            <div class="mobile-dentist-chip">
+              <div class="chip-accent-dot"></div>
+              <div class="chip-info">
+                <strong>Dr. Carlos Eduardo</strong>
+                <span>Reabilitação & Implantes &bull; CRORS 30471</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1197,6 +1211,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=3.2"></script>
+  <script src="js/main.js?v=3.5"></script>
 </body>
 </html>
