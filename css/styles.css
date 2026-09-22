@@ -489,15 +489,16 @@ button, input, select, textarea {
 
 .hero-title {
   margin-bottom: 0.85rem;
-  font-size: clamp(1.9rem, 6.5vw, 3.2rem);
+  font-size: clamp(1.85rem, 6vw, 3.2rem);
   line-height: 1.15;
   color: var(--wine-dark);
+  text-wrap: balance;
 }
 
 .hero-title span {
   color: var(--cherry-velvet);
   font-style: italic;
-  display: inline-block;
+  display: inline;
 }
 
 .hero-lead {
@@ -2005,6 +2006,7 @@ button, input, select, textarea {
     font-size: clamp(2.3rem, 3.6vw, 3.3rem);
     line-height: 1.15;
     margin-bottom: 1.25rem;
+    text-wrap: balance;
   }
 
   .hero-lead {
